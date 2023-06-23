@@ -1,0 +1,5 @@
+package sqrs
+
+func main(){
+
+}
