@@ -7,6 +7,7 @@ import (
 	repo "github.com/mohammadMghi/sqrs/repos"
 )
 type CreateProductHandler struct{
+	command Command
 	productRepository repo.ProductRepository
 }
 

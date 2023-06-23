@@ -1,6 +1,9 @@
 package sqrs
 
 import (
+ 
+
+	entities "github.com/mohammadMghi/sqrs/entities"
 	sqrs "github.com/mohammadMghi/sqrs/entities"
 	"github.com/mohammadMghi/sqrs/mysql"
 )
@@ -22,5 +25,19 @@ func(u *ProductRepository) Save (Product sqrs.Product) error{
 	}
 
 	return nil
+
+}
+
+func(u *ProductRepository) GetProduct () (*entities.Product , error){
+
+	// Save product in database 
+
+	err , product := u.mysql.GetProduct()
+
+	if err != nil{
+		return nil , err
+	}
+
+	return product , nil
 
 }

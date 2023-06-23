@@ -76,3 +76,27 @@ func (mysql *MysqlDB)saveProduct(product entities.Product)error{
 	
 
 }
+
+
+func (mysql *MysqlDB)GetProduct() (error, *entities.Product){
+    var product entities.Product
+	// Prepare the SQL statement
+    rows, err := mysql.db.Query("SELECT product FROM products ")
+    if err != nil {
+        log.Fatal(err.Error())
+		return err,nil
+    }
+    defer rows.Close()
+
+   
+	err = rows.Scan(&product)
+
+	if err !=nil{
+		log.Fatal(err.Error())
+		return err , nil
+	}
+
+    return  nil ,&product
+	
+
+}
