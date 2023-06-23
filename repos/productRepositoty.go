@@ -15,7 +15,12 @@ func(u *ProductRepository) Save (Product sqrs.Product) error{
 
 	// Save product in database 
 
-	u.mysql.
+	err := u.Save(Product)
 
+	if err != nil{
+		return err
+	}
+
+	return nil
 
 }

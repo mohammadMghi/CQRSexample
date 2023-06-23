@@ -2,7 +2,7 @@ package mysql
 
 import (
 	"database/sql"
-	"fmt"
+ 
 	"log"
 
 	entities "github.com/mohammadMghi/sqrs/entities"
